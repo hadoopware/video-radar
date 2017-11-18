@@ -1,0 +1,274 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+* {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    height: 100vh;
+    background-image: url('../img/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 1024px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: #3AA1E9;
+    transition: color 0.15s ease-in-out;
+}
+
+a:hover {
+    color: #58bafc;
+}
+
+.header {
+    height: 70px;
+    width: 100%;
+    min-width: 1024px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.8);
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+    .header .menu,
+    .header .account {
+        display: flex;
+        align-content: center;
+        line-height: 29px;
+    }
+        .header .logo {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #3AA1E9;
+        }
+
+        .header .account img {
+            width: 14px;
+        }
+
+        .header .menu span,
+        .header .account span {
+            font-size: 18px;
+            margin-left: 7px;
+        }
+
+.container {
+    width: 100%;
+    min-width: 1024px;
+    max-width: 1280px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+    .container .title-row {
+        width: 100%;
+        text-align: left;
+        line-height: 24px;
+        font-size: 32px;
+        font-weight: 400;
+    }
+        .container .title-row h2 {
+            line-height: 24px;
+            font-size: 32px;
+            font-weight: 400;
+            margin: 0;
+            margin-bottom: 30px;
+        }
+
+    .container .content-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container .content-row .left-block {
+        width: 100%;
+        margin-right: 20px;
+    }
+
+        .container .content-row .left-block > * {
+            width: 100%;
+        }
+
+        .container .content-row .left-block .video-block {
+            width: 100%;
+            font-size: 0.01px;
+            position: relative;
+        }
+
+        .container .content-row .left-block .video-block img {
+            width: 100%;
+        }
+            .container .content-row .left-block .video-block a {
+                display: inline-block;
+                position: absolute;
+                /* background: rgba(255,0,0,.2); */
+            }
+
+            .container .content-row .left-block .video-block a#tie {
+                left: 0;
+                top: 0;
+                width: 40%;
+                height: 50%;
+            }
+
+            .container .content-row .left-block .video-block a#suit {
+                left: 0;
+                bottom: 0;
+                width: 40%;
+                height: 50%;
+            }
+
+            .container .content-row .left-block .video-block a#earrings {
+                left: 40%;
+                top: 0;
+                width: 30%;
+                height: 50%;
+            }
+
+            .container .content-row .left-block .video-block a#dress {
+                left: 40%;
+                bottom: 0;
+                width: 30%;
+                height: 50%;
+            }
+
+            .container .content-row .left-block .video-block a#shirt {
+                left: 70%;
+                top: 0;
+                width: 30%;
+                height: 100%;
+            }
+
+        .container .content-row .left-block .video-description {
+            margin-top: 40px;
+            margin-bottom: 60px;
+            width: 95%;
+
+        }
+
+    .container .content-row .right-block {
+        width: 320px;
+        background: #1C1C1C;
+        padding: 20px;
+        height: calc(100vh - 200px);
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+    }
+
+        .container .content-row .right-block h3 {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .container .content-row .right-block .items-block {
+            height: 100%;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+
+        .container .content-row .right-block .items-block .item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0;
+            margin: 0;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 400;
+            position: relative;
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+            .right-block .items-block .item.visible {
+                visibility: visible !important;
+                opacity: 1 !important;
+                height: auto !important;
+                padding: 10px !important;
+                margin-bottom: 10px !important;
+            }
+
+            .right-block .items-block .item * {
+                display: inline-block;
+            }
+
+            .right-block .items-block .item > a {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                text-align: right;
+                top: 10px;
+                right: 10px;
+                font-size: 0;
+                opacity: 0.5;
+                transition: opacity .2s ease-in-out;
+            }
+                .right-block .items-block .item > a:hover {
+                    opacity: 1;
+                }
+
+            .right-block .items-block .item > img {
+                position: absolute;
+                top: 25px;
+                right: 25px;
+            }
+
+            .right-block .items-block .item .time {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.5);
+            }
+
+            .right-block .items-block .item .play {
+                font-size: 12px;
+            }
+
+            .right-block .items-block .item .name {
+                width: 100%;
+                margin-top: 15px;
+                font-size: 16px;
+            }
+
+            .right-block .items-block .item .price {
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            .right-block .items-block .item .brand-logo {
+                margin: 10px 0;
+            }
+
+            .right-block .items-block .item .brand-link {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            .right-block .items-block .item .item-description {
+                font-size: 12px;
+                line-height: 20px;
+            }
+
+
